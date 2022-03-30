@@ -12,10 +12,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 		ChromeDriver driver = new ChromeDriver();
 		
 		driver.get("http://leaftaps.com/opentaps/control/main");
-		/*
-					* 15 Confirm the changed name appears
-					* 16 Close the browser (Do not log out)
-		*/
+		
 		driver.manage().window().maximize();
 		
 		driver.findElement(By.id("username")).sendKeys("demosalesmanager");
@@ -35,9 +32,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 		driver.findElement(By.id("ext-gen334")).click();
 		
 		driver.findElement(By.xpath("//a[contains(text(),'Shobana')][1]")).click();
-		
-		System.out.println(driver.getTitle());
-		
+				
 		driver.findElement(By.linkText("Edit")).click();
 		
 		driver.findElement(By.id("updateLeadForm_companyName")).clear();
@@ -45,7 +40,9 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 		driver.findElement(By.id("updateLeadForm_companyName")).sendKeys("Bosch");
 		
 		driver.findElement(By.name("submitButton")).click();
-		 
+		
+		System.out.println(driver.getTitle());
+		
 		driver.close();
 	}
 
